@@ -34,3 +34,7 @@ def isPrime(num):
             if num % i == 0:
                 return False
         return True
+
+# Verifica si todos los parametros ingresados son 0
+def isAllZero(...params):
+    pass

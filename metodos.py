@@ -39,6 +39,3 @@ def congruencial_aditivo():
         if is_prime(semilla):
             break  #osea si es primo ya es primo con respecto a la m
         #hay que ver si no
-
-def isAllZero(...params):
-    pass
