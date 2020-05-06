@@ -24,11 +24,9 @@ def fibonacci(v1, v2, a, n):
 def congruencial_multiplicativo(s, n, a, m):
     resultado = []
     resultado.append(str(s))
-    secuencia = str(s)
     i = 0
     while i < n:
         v = (a * int(resultado[i])) % m
         resultado.append(str(v))
-        secuencia = str(v)
         i += 1
-    return secuencia
+    return resultado
