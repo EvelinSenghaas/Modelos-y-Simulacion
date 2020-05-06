@@ -1,5 +1,6 @@
 """ METODOS """
-
+import utilidades
+from utilidades import isPrime
 
 # genera una sucesion de numeros pseudoaleatorios con el metodo fibonacci
 def fibonacci(v1, v2, a, n):
@@ -32,10 +33,10 @@ def congruencial_multiplicativo(s, n, a, m):
     return secuencia
 
 
-def congruencial_aditivo():
+def congruencial_multiplicativo():
     semilla = int(input('semilla:'))
     while (semilla % 2 == 0 or semilla % 5 == 0):
         semilla = int(input('semilla:'))
-        if is_prime(semilla):
+        if isPrime(semilla):
             break  #osea si es primo ya es primo con respecto a la m
         #hay que ver si no
