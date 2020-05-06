@@ -37,4 +37,4 @@ entrada = input()
 if entrada == 1:
     fibonacci()
 else:
-    congruencial_multiplicativo()
+    congruencialMultiplicativo()

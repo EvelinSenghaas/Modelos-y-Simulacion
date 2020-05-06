@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "/bin/python",
+  "python.pythonPath": "C:\\Users\\Evelin Senghaas\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
   "python.formatting.provider": "yapf",
   "python.formatting.yapfArgs": [
     "--style",
