@@ -1,0 +1,8 @@
+{
+  "python.pythonPath": "/bin/python",
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfArgs": [
+    "--style",
+    "{based_on_style: google, indent_width: 4, arithmetic_precedence_indication: true, space_inside_brackets = false}"
+  ]
+}
