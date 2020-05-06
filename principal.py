@@ -24,7 +24,9 @@ def congruencialMultiplicativo():
         a = isNumber(isNegative(int(input())))
         print('Cuantos numeros quiere generar? : ')
         n = isNumber(isNegative(int(input())))
-        m=18446744227
+        print('Ingrese el valor m : ')
+        m = isNumber(isNegative(int(input())))
+        #Faltan cotroles, m tiene que ser mayor que seed
         print("Sucesion: ", metodos.congruencial_multiplicativo(seed, n, a, m))
     except ValueError as e:
         print(e)
