@@ -1,5 +1,5 @@
 import metodos
-from utilidades import isNumber, isNegative
+from utilidades import isNumber, isNegative, getSeed
 
 
 def fibonacci():
@@ -17,8 +17,16 @@ def fibonacci():
         print(e)
 
 
-def congruencial_multiplicativo():
-    pass
+def congruencialMultiplicativo():
+    try:
+        seed = getSeed()
+        print('Ingrese el parametro A: ')
+        a = isNumber(isNegative(input()))
+        print('Cuantos numeros quiere generar? : ')
+        n = isNumber(isNegative(input()))
+        print("Sucesion: ", metodos.fibonacci(v1, a, n))
+    except ValueError as e:
+        print(e)
 
 
 print(

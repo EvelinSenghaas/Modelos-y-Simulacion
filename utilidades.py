@@ -36,20 +36,20 @@ def isPrime(num):
         return True
 
 
-# Verifica si ambas semillas son 0, e informa el mayor
-def areZero(v1, v2):
+# Verifica si ambas semillas son 0, y retorna el mayor el mayor
+def validateSeeds(v1, v2):
     if v1 == 0 and v2 == 0:
-        return True
-    if v1 > v2:
-        print("A debe ser mayor que ", v1)
-    else:
-        print("A debe ser mayor que ", v2)
-    return False
+        raise ValueError("Error: ambas semillas son igual a 0")
+    if v1 >= v2:
+        return v1
+    return v2
 
 
-# Verifica la divisibilidad entre 2 numeros con respecto a la semilla
-def checkDivisibility(a=2, b=5):
-    seed = int(input('semilla:'))
+# Obtiene una semilla valida para el generador
+def getSeed():
+    print("Ingrese una semilla: ")
+    seed = isNumber(isNegative())
     while (seed % 2 == 0 or seed % 5 == 0):
         print("Error: semilla divisible por 2 o 5. \n")
         seed = int(input('Semilla:'))
+    return seed
