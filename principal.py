@@ -1,14 +1,18 @@
+import metodos
+from utilidades import isNumber, isNegative
+
+
 def fibonacci():
     try:
         print('Ingrese el parametro V1: ')
-        v1 = Generador.isNegative(Generador.isNumber(input()))
+        v1 = isNumber(isNegative(input()))
         print('Ingrese el parametro V2: ')
-        v2 = Generador.isNegative(Generador.isNumber(input()))
+        v2 = isNumber(isNegative(input()))
         print('Ingrese el parametro A: ')
-        a = Generador.isNegative(Generador.isNumber(input()))
+        a = isNumber(isNegative(input()))
         print('Cuantos numeros quiere generar? : ')
-        n = Generador.isNegative(Generador.isNumber(input()))
-        print("Sucesion: ", Generador.fibonacci(v1, v2, a, n))
+        n = isNumber(isNegative(input()))
+        print("Sucesion: ", metodos.fibonacci(v1, v2, a, n))
     except ValueError as e:
         print(e)
 
