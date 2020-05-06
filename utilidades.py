@@ -35,6 +35,8 @@ def isPrime(num):
                 return False
         return True
 
+
 # Verifica si todos los parametros ingresados son 0
-def isAllZero(...params):
+def isAllZero(params):
     pass
+    # if 0 not in lista
