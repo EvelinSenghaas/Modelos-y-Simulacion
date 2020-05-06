@@ -48,7 +48,7 @@ def validateSeeds(v1, v2):
 # Obtiene una semilla valida para el generador
 def getSeed():
     print("Ingrese una semilla: ")
-    seed = isNumber(isNegative())
+    seed = isNumber(isNegative(int(input())))
     while (seed % 2 == 0 or seed % 5 == 0):
         print("Error: semilla divisible por 2 o 5. \n")
         seed = int(input('Semilla:'))
