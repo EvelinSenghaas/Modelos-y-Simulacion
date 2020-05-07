@@ -1,4 +1,4 @@
-import metodos 
+import metodos
 from utilidades import isNumber, isNegative, getSeed
 
 
@@ -27,7 +27,7 @@ def congruencialMultiplicativo():
         print('Ingrese el valor m : ')
         m = isNumber(isNegative(int(input())))
         #Faltan cotroles, m tiene que ser mayor que seed
-        print("Sucesion: ", metodos.congruencial_multiplicativo(seed, n, a, m))
+        print("Sucesion: ", metodos.congruencialMultiplicativo(seed, n, a, m))
     except ValueError as e:
         print(e)
 
