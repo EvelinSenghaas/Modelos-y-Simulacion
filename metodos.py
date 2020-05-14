@@ -6,7 +6,7 @@ from utilidades import isPrime
 # genera una sucesion de numeros pseudoaleatorios con el metodo fibonacci
 def fibonacci(v1, v2, a, n):
     i = 0
-    sucesion = [v1, v2]
+    sucesion = [str(v1), str(v2)]
     while (i < n):
         if v2 + v1 <= a:
             k = 0
