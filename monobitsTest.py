@@ -5,7 +5,7 @@ from scipy.special import np
 
 
 # Convertir la serie en 0 o 1
-def convertSerie(serie):
+def convertSerieToOneZero(serie):
     serie = ''.join(serie)
     result = []
     for i in range(0, len(serie)):
@@ -16,11 +16,19 @@ def convertSerie(serie):
     return result
 
 
+# Convertir la serie en -1 o 1
+def convertSerieToOneOne(serie):
+    result = []
+    for i in range(0, len(serie)):
+        result.append(2 * serie[i] - 1)
+    return result
+
+
 # Sumatoria de la -1 y 1 de la serie
 def sumatoriaXi(serie):
     S = 0
     for s in serie:
-        S += 2*s - 1
+        S += s
     return S
 
 
@@ -39,7 +47,10 @@ def P_value(Sobs):
 # Realiza el test de monobits sobre una serie
 def test(serie):
     length = len(serie)
-    result = P_value(Sobs(sumatoriaXi(convertSerie(serie)), length))
+    result = P_value(
+        Sobs(sumatoriaXi(convertSerieToOneOne(convertSerieToOneZero(serie))),
+             length))
+    print(result)
     if result > 0.01:
         return True
     return False
