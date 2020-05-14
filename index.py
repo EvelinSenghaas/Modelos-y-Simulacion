@@ -2,6 +2,8 @@ from flask import Flask, request, json
 from flask_cors import CORS
 from utilidades import isNumber, isNegative, getSeed
 import metodos
+import monobitsTest
+import chiCuadrada
 app = Flask(__name__)
 CORS(app)
 
@@ -39,3 +41,30 @@ def congruencialMultiplicativo():
         return json.jsonify(response)
     except ValueError as e:
         return e
+
+
+@app.route('/tests/monobits', methods=['POST'])
+def test_monobits():
+    try:
+        req = request.get_json()
+        serie = req['serie']
+        resultado = monobitsTest.test(serie)
+        return json.jsonify(resultado)
+    except Exception as e:
+        return e
+        return json.jsonify(
+            {'msg': "Lo sentimos, hubo un error durante el test."})
+
+
+@app.route('/tests/chicuadrada', methods=['POST'])
+def test_chicuadrada():
+    try:
+        req = request.get_json()
+        serie = req['serie']
+        k = int(req['k'])
+        resultado = chiCuadrada.chiCuadrado(serie, k)
+        return json.jsonify(resultado)
+    except Exception as e:
+        return e
+        return json.jsonify(
+            {'msg': "Lo sentimos, hubo un error durante el test."})
