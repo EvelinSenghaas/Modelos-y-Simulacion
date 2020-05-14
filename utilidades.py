@@ -53,3 +53,18 @@ def getSeed():
         print("Error: semilla divisible por 2 o 5. \n")
         seed = int(input('Semilla:'))
     return seed
+
+
+def validateChiCuadrado(chi, gl):
+    dic = {
+        1: 2.7055,
+        2: 4.6052,
+        4: 7.7794,
+        6: 10.446,
+        9: 14.6837,
+    }
+    valor = dic[gl]
+    if chi < valor:
+        return True
+    else:
+        return False
