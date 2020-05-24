@@ -4,6 +4,7 @@ from utilidades import isNumber, isNegative, getSeed
 import metodos
 import monobitsTest
 import chiCuadrada
+from classMark import runClassMarks
 app = Flask(__name__)
 CORS(app)
 
@@ -25,7 +26,8 @@ def fibonacci():
         response = metodos.fibonacci(v1, v2, a, n)
         return json.jsonify(response)
     except ValueError as e:
-        return e
+        return json.jsonify(
+            {'msg': "Lo sentimos, hubo un error."})
 
 
 @app.route('/congruencialMultiplicativo', methods=['POST'])
@@ -40,7 +42,8 @@ def congruencialMultiplicativo():
         response = metodos.congruencialMultiplicativo(seed, n, a, m)
         return json.jsonify(response)
     except ValueError as e:
-        return e
+        return json.jsonify(
+            {'msg': "Lo sentimos, hubo un error."})
 
 
 @app.route('/tests/monobits', methods=['POST'])
@@ -51,7 +54,6 @@ def test_monobits():
         resultado = monobitsTest.test(serie)
         return json.jsonify(resultado)
     except Exception as e:
-        return e
         return json.jsonify(
             {'msg': "Lo sentimos, hubo un error durante el test."})
 
@@ -65,6 +67,19 @@ def test_chicuadrada():
         resultado = chiCuadrada.chiCuadrado(serie, k)
         return json.jsonify(resultado)
     except Exception as e:
-        return e
         return json.jsonify(
             {'msg': "Lo sentimos, hubo un error durante el test."})
+
+@app.route('/classMarks', methods=['POST'])
+def classMarks():
+    try:
+        req = request.get_json()
+        serie = req['serie']
+        classMarks = req['classMarks']
+        minimum = float(req['minimum'])
+        maximum = float(req['maximum'])
+        resultado = runClassMarks(classMarks, serie, minimum, maximum)
+        return json.jsonify(resultado)
+    except Exception as e:
+        return json.jsonify(
+            {'msg': "Lo sentimos, hubo un error."})
